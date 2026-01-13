@@ -270,6 +270,16 @@
         tr:hover { background: #fafafa; }
         tr:last-child td { border-bottom: none; }
 
+        /* Links */
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
         /* Badges */
         .badge {
             display: inline-flex;
@@ -2674,11 +2684,77 @@
             </div>
 
             <div class="alert alert-info" style="margin-top: 2rem;">
-                <div class="alert-icon">ℹ️</div>
+                <div class="alert-icon"></div>
                 <div>
                     <strong>免責事項</strong><br>
                     この資料は情報提供を目的として作成されており、法的助言を構成するものではありません。法令の解釈・適用については、所轄の労働基準監督署または専門家にご確認ください。法令改正により内容が変更される場合がありますので、最新の情報は厚生労働省のWebサイト等でご確認ください。
                 </div>
+            </div>
+
+            <h3>一次情報ソース</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr><th>法令・通達</th><th>出典</th><th>URL</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>労働安全衛生法</td>
+                            <td>e-Gov法令検索</td>
+                            <td><a href="https://elaws.e-gov.go.jp/document?lawid=347AC0000000057" target="_blank" rel="noopener">elaws.e-gov.go.jp</a></td>
+                        </tr>
+                        <tr>
+                            <td>労働安全衛生法施行令</td>
+                            <td>e-Gov法令検索</td>
+                            <td><a href="https://elaws.e-gov.go.jp/document?lawid=347CO0000000318" target="_blank" rel="noopener">elaws.e-gov.go.jp</a></td>
+                        </tr>
+                        <tr>
+                            <td>労働安全衛生規則</td>
+                            <td>e-Gov法令検索</td>
+                            <td><a href="https://elaws.e-gov.go.jp/document?lawid=347M50002000032" target="_blank" rel="noopener">elaws.e-gov.go.jp</a></td>
+                        </tr>
+                        <tr>
+                            <td>クレーン等安全規則</td>
+                            <td>e-Gov法令検索</td>
+                            <td><a href="https://elaws.e-gov.go.jp/document?lawid=347M50002000034" target="_blank" rel="noopener">elaws.e-gov.go.jp</a></td>
+                        </tr>
+                        <tr>
+                            <td>安全衛生特別教育規程</td>
+                            <td>e-Gov法令検索</td>
+                            <td><a href="https://elaws.e-gov.go.jp/document?lawid=347M50002000022" target="_blank" rel="noopener">elaws.e-gov.go.jp</a></td>
+                        </tr>
+                        <tr>
+                            <td>酸素欠乏症等防止規則</td>
+                            <td>e-Gov法令検索</td>
+                            <td><a href="https://elaws.e-gov.go.jp/document?lawid=347M50002000042" target="_blank" rel="noopener">elaws.e-gov.go.jp</a></td>
+                        </tr>
+                        <tr>
+                            <td>石綿障害予防規則</td>
+                            <td>e-Gov法令検索</td>
+                            <td><a href="https://elaws.e-gov.go.jp/document?lawid=417M60000100021" target="_blank" rel="noopener">elaws.e-gov.go.jp</a></td>
+                        </tr>
+                        <tr>
+                            <td>粉じん障害防止規則</td>
+                            <td>e-Gov法令検索</td>
+                            <td><a href="https://elaws.e-gov.go.jp/document?lawid=354M50002000018" target="_blank" rel="noopener">elaws.e-gov.go.jp</a></td>
+                        </tr>
+                        <tr>
+                            <td>職長教育カリキュラム</td>
+                            <td>厚生労働省</td>
+                            <td><a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/anzen/anzeneisei02.html" target="_blank" rel="noopener">mhlw.go.jp</a></td>
+                        </tr>
+                        <tr>
+                            <td>eラーニング通達（基発0326第1号）</td>
+                            <td>厚生労働省</td>
+                            <td><a href="https://www.mhlw.go.jp/content/11300000/000619426.pdf" target="_blank" rel="noopener">mhlw.go.jp (PDF)</a></td>
+                        </tr>
+                        <tr>
+                            <td>熱中症予防対策</td>
+                            <td>厚生労働省</td>
+                            <td><a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000116133.html" target="_blank" rel="noopener">mhlw.go.jp</a></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </section>
     </div>
@@ -2686,7 +2762,7 @@
     <footer>
         <p><strong>法定教育要件まとめ</strong></p>
         <p>KCI教育センター対応講座版</p>
-        <p style="margin-top: 1rem;">最終更新: 2026年1月 | 対応法令: 2025年4月施行分まで</p>
+        <p style="margin-top: 0.75rem; font-size: 0.85rem; opacity: 0.8;">最終更新: 2026年1月 | 対応法令: 2025年4月施行分まで</p>
     </footer>
 
     <script>
