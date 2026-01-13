@@ -9,43 +9,52 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #18181b;
-            --primary-light: #27272a;
-            --accent: #2563eb;
-            --accent-light: #3b82f6;
-            --success: #059669;
-            --warning: #d97706;
-            --danger: #dc2626;
-            --bg: #fafafa;
-            --card: #ffffff;
+            /* ベースカラー */
+            --black: #18181b;
+            --white: #ffffff;
+            --gray: #71717a;
+            --gray-light: #e4e4e7;
+            --gray-bg: #f4f4f5;
+
+            /* UIコンポーネント用 */
             --text: #18181b;
             --text-muted: #71717a;
+            --bg: #f4f4f5;
+            --card: #ffffff;
             --border: #e4e4e7;
             --radius: 12px;
-            --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
-            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            --shadow: 0 1px 3px rgba(0,0,0,0.08);
+
+            /* アクセントカラー */
+            --primary: #18181b;
+            --accent: #3b82f6;
+
+            /* ステータスカラー */
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Noto Sans JP', sans-serif;
-            background: var(--bg);
-            color: var(--text);
+            background: var(--white);
+            color: var(--black);
             line-height: 1.8;
         }
 
         /* Hero Header */
         .hero {
-            background: var(--primary);
-            color: white;
+            background: var(--black);
+            color: var(--white);
             padding: 3rem 2rem;
             text-align: center;
         }
 
         .hero-content { max-width: 800px; margin: 0 auto; }
         .hero h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 600; margin-bottom: 0.75rem; }
-        .hero p { font-size: 1rem; opacity: 0.8; margin-bottom: 1.25rem; }
+        .hero p { font-size: 1rem; opacity: 0.7; margin-bottom: 1.25rem; }
 
         .hero-badges {
             display: flex;
@@ -165,7 +174,7 @@
             color: var(--text);
             margin: 2rem 0 1rem;
             padding-left: 0.75rem;
-            border-left: 3px solid var(--accent);
+            border-left: 3px solid var(--black);
         }
 
         h4 {
@@ -179,12 +188,13 @@
 
         h4::before {
             content: '▸';
-            color: var(--accent);
+            color: var(--black);
         }
 
         /* Law Hierarchy */
         .hierarchy-container {
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            background: var(--bg);
+            border: 1px solid var(--border);
             border-radius: var(--radius);
             padding: 2rem;
             margin: 1.5rem 0;
@@ -402,7 +412,7 @@
             padding: 1rem 1.25rem;
             background: var(--bg);
             border-radius: 10px;
-            border-left: 4px solid var(--accent);
+            border-left: 4px solid var(--black);
             gap: 1rem;
         }
 
@@ -412,7 +422,7 @@
         }
 
         .curriculum-time {
-            background: var(--accent);
+            background: var(--black);
             color: white;
             padding: 0.3rem 1rem;
             border-radius: 50px;
@@ -425,7 +435,7 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: linear-gradient(135deg, var(--success), #047857);
+            background: var(--black);
             color: white;
             padding: 0.8rem 1.5rem;
             border-radius: 50px;
@@ -447,7 +457,7 @@
 
         .alert-info {
             background: #f4f4f5;
-            border-left: 3px solid var(--accent);
+            border-left: 3px solid var(--black);
         }
 
         .alert-warning {
@@ -2785,3 +2795,4 @@
     </script>
 </body>
 </html>
+
