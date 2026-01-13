@@ -1,0 +1,1801 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>法定教育要件まとめ | KCI教育センター</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --primary-light: #1e293b;
+            --accent: #3b82f6;
+            --accent-light: #60a5fa;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --text: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --radius: 16px;
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        /* Hero Header */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #1e40af 50%, #7c3aed 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+        .hero h1 { font-size: clamp(1.8rem, 5vw, 2.5rem); font-weight: 700; margin-bottom: 1rem; }
+        .hero p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 1.5rem; }
+
+        .hero-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-badge {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        /* Navigation */
+        .nav-container {
+            background: var(--card);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+        }
+
+        .nav-scroll {
+            display: flex;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            overflow-x: auto;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .nav-scroll::-webkit-scrollbar { height: 0; }
+
+        .nav-link {
+            padding: 0.6rem 1.2rem;
+            background: var(--bg);
+            border: none;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--text);
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background: var(--accent);
+            color: white;
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Section */
+        section {
+            background: var(--card);
+            border-radius: var(--radius);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .section-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin: 2rem 0 1rem;
+            padding-left: 1rem;
+            border-left: 4px solid var(--accent);
+        }
+
+        h4 {
+            font-size: 1rem;
+            color: var(--text);
+            margin: 1.5rem 0 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        h4::before {
+            content: '▸';
+            color: var(--accent);
+        }
+
+        /* Law Hierarchy */
+        .hierarchy-container {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-radius: var(--radius);
+            padding: 2rem;
+            margin: 1.5rem 0;
+        }
+
+        .hierarchy-tree {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .h-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .h-level {
+            min-width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.8rem;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .h-level-1 { background: #1e3a8a; }
+        .h-level-2 { background: #1d4ed8; }
+        .h-level-3 { background: #3b82f6; }
+        .h-level-4 { background: #60a5fa; }
+        .h-level-5 { background: #93c5fd; color: #1e3a8a; }
+
+        .h-content {
+            flex: 1;
+            padding: 0.8rem 1.2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            font-weight: 500;
+        }
+
+        .h-sub {
+            margin-left: 56px;
+            padding-left: 1rem;
+            border-left: 2px dashed var(--accent);
+        }
+
+        /* Tables */
+        .table-container {
+            overflow-x: auto;
+            margin: 1rem 0;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        th {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+
+        tr:hover { background: #f8fafc; }
+        tr:last-child td { border-bottom: none; }
+
+        /* Badges */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .badge-required { background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; }
+        .badge-effort { background: #fffbeb; color: #d97706; border: 1px solid #fde68a; }
+        .badge-new { background: #ecfdf5; color: #059669; border: 1px solid #a7f3d0; }
+        .badge-info { background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; }
+
+        /* Code Block */
+        .code-block {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 12px;
+            font-family: 'Consolas', monospace;
+            font-size: 0.85rem;
+            line-height: 1.7;
+            overflow-x: auto;
+            margin: 1rem 0;
+            white-space: pre-wrap;
+        }
+
+        .code-title {
+            background: #0f172a;
+            color: #94a3b8;
+            padding: 0.5rem 1rem;
+            border-radius: 12px 12px 0 0;
+            font-size: 0.8rem;
+            margin-bottom: -1rem;
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .edu-card {
+            background: white;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .edu-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent);
+        }
+
+        .edu-card-header {
+            background: linear-gradient(135deg, var(--primary) 0%, #374151 100%);
+            color: white;
+            padding: 1rem 1.25rem;
+        }
+
+        .edu-card-header h4 {
+            color: white;
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .edu-card-header h4::before { display: none; }
+
+        .edu-card-body {
+            padding: 1.25rem;
+        }
+
+        .edu-card-body p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .edu-card-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .time-badge {
+            background: linear-gradient(135deg, var(--success), #059669);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .law-ref {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.8rem;
+            padding-top: 0.8rem;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Curriculum List */
+        .curriculum-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin: 1rem 0;
+        }
+
+        .curriculum-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.25rem;
+            background: var(--bg);
+            border-radius: 10px;
+            border-left: 4px solid var(--accent);
+            gap: 1rem;
+        }
+
+        .curriculum-item span:first-child {
+            flex: 1;
+            font-size: 0.9rem;
+        }
+
+        .curriculum-time {
+            background: var(--accent);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+
+        .total-time {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, var(--success), #047857);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            margin: 1rem 0;
+        }
+
+        /* Alert Boxes */
+        .alert {
+            padding: 1.25rem;
+            border-radius: 12px;
+            margin: 1rem 0;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .alert-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .alert-info {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border: 1px solid #93c5fd;
+        }
+
+        .alert-warning {
+            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+            border: 1px solid #fcd34d;
+        }
+
+        .alert-danger {
+            background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+            border: 1px solid #fca5a5;
+        }
+
+        /* Accordion */
+        .accordion {
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin: 1rem 0;
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            padding: 1rem 1.25rem;
+            background: var(--bg);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .accordion-header:hover { background: #e2e8f0; }
+
+        .accordion-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+
+        .accordion.open .accordion-icon { transform: rotate(45deg); }
+
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s;
+        }
+
+        .accordion.open .accordion-body { max-height: 2000px; }
+
+        .accordion-content { padding: 1.25rem; }
+
+        /* Penalty Section */
+        .penalty-box {
+            background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+            border: 2px solid var(--danger);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .penalty-box h4 {
+            color: var(--danger);
+        }
+
+        .penalty-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            margin: 0.5rem 0;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .penalty-amount {
+            color: var(--danger);
+            font-weight: 700;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 2rem;
+        }
+
+        footer p { opacity: 0.8; margin: 0.3rem 0; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero { padding: 3rem 1.5rem; }
+            .container { padding: 1rem; }
+            section { padding: 1.5rem; }
+            .cards-grid { grid-template-columns: 1fr; }
+            th, td { padding: 0.75rem 0.5rem; font-size: 0.8rem; }
+            .curriculum-item { flex-direction: column; align-items: flex-start; }
+            .h-sub { margin-left: 20px; }
+        }
+
+        /* Print */
+        @media print {
+            .nav-container, .hero { display: none; }
+            section { box-shadow: none; border: 1px solid #ddd; break-inside: avoid; }
+        }
+
+        /* Scroll behavior */
+        html { scroll-behavior: smooth; }
+        section[id] { scroll-margin-top: 80px; }
+    </style>
+</head>
+<body>
+    <!-- Hero -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>法定教育要件まとめ</h1>
+            <p>労働安全衛生法等に基づく法定教育の要件を網羅的にまとめた資料<br>KCI教育センター対応講座版</p>
+            <div class="hero-badges">
+                <span class="hero-badge">最終更新: 2026年1月</span>
+                <span class="hero-badge">対応法令: 2025年4月施行分</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-scroll">
+            <a href="#basics" class="nav-link">法令の基礎知識</a>
+            <a href="#foreman" class="nav-link">職長等教育</a>
+            <a href="#special" class="nav-link">特別教育一覧</a>
+            <a href="#online" class="nav-link">オンライン教育</a>
+            <a href="#records" class="nav-link">記録保存</a>
+            <a href="#penalty" class="nav-link">罰則規定</a>
+            <a href="#laws" class="nav-link">関係法令条文</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- 法令の基礎知識 -->
+        <section id="basics">
+            <div class="section-header">
+                <div class="section-icon">📚</div>
+                <h2>法令の基礎知識</h2>
+            </div>
+
+            <h3>法令の体系</h3>
+            <p>労働安全衛生に関する法令は、以下のような階層構造になっています。</p>
+
+            <div class="hierarchy-container">
+                <div class="hierarchy-tree">
+                    <div class="h-item">
+                        <div class="h-level h-level-1">法</div>
+                        <div class="h-content">労働安全衛生法（法律）- 昭和47年法律第57号</div>
+                    </div>
+                    <div class="h-sub">
+                        <div class="h-item">
+                            <div class="h-level h-level-2">令</div>
+                            <div class="h-content">労働安全衛生法施行令（政令）- 昭和47年政令第318号</div>
+                        </div>
+                        <div class="h-sub">
+                            <div class="h-item">
+                                <div class="h-level h-level-3">則</div>
+                                <div class="h-content">労働安全衛生規則（省令）- 昭和47年労働省令第32号</div>
+                            </div>
+                            <div class="h-sub">
+                                <div class="h-item">
+                                    <div class="h-level h-level-4">告</div>
+                                    <div class="h-content">安全衛生特別教育規程（告示）- 昭和47年労働省告示第92号</div>
+                                </div>
+                                <div class="h-item">
+                                    <div class="h-level h-level-4">則</div>
+                                    <div class="h-content">クレーン等安全規則 / 酸素欠乏症等防止規則 / 石綿障害予防規則 等</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="h-item">
+                            <div class="h-level h-level-5">通</div>
+                            <div class="h-content">通達（行政解釈・運用指針）- 基発・基安発等</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>教育の種類と法的位置づけ</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>種類</th>
+                            <th>法的性質</th>
+                            <th>根拠条文</th>
+                            <th>未実施の場合</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>雇入れ時教育</strong></td>
+                            <td><span class="badge badge-required">義務</span></td>
+                            <td>労働安全衛生法第59条第1項</td>
+                            <td>6月以下の懲役又は50万円以下の罰金</td>
+                        </tr>
+                        <tr>
+                            <td><strong>作業内容変更時教育</strong></td>
+                            <td><span class="badge badge-required">義務</span></td>
+                            <td>労働安全衛生法第59条第2項</td>
+                            <td>6月以下の懲役又は50万円以下の罰金</td>
+                        </tr>
+                        <tr>
+                            <td><strong>特別教育</strong></td>
+                            <td><span class="badge badge-required">義務</span></td>
+                            <td>労働安全衛生法第59条第3項</td>
+                            <td>6月以下の懲役又は50万円以下の罰金</td>
+                        </tr>
+                        <tr>
+                            <td><strong>職長教育</strong></td>
+                            <td><span class="badge badge-required">義務</span></td>
+                            <td>労働安全衛生法第60条</td>
+                            <td>6月以下の懲役又は50万円以下の罰金</td>
+                        </tr>
+                        <tr>
+                            <td><strong>能力向上教育</strong></td>
+                            <td><span class="badge badge-effort">努力義務</span></td>
+                            <td>労働安全衛生法第19条の2</td>
+                            <td>罰則なし（安全配慮義務の観点で重要）</td>
+                        </tr>
+                        <tr>
+                            <td><strong>健康教育</strong></td>
+                            <td><span class="badge badge-effort">努力義務</span></td>
+                            <td>労働安全衛生法第69条</td>
+                            <td>罰則なし</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="alert alert-info">
+                <div class="alert-icon">💡</div>
+                <div>
+                    <strong>教育の省略について（労働安全衛生規則第40条第3項）</strong><br>
+                    事業者は、教育事項の全部又は一部について十分な知識及び技能を有していると認められる者については、当該事項に関する教育を省略することができます。ただし、単に経験があるというだけでは省略できず、省略する場合は事業者がその判断根拠を明確にしておく必要があります。
+                </div>
+            </div>
+        </section>
+
+        <!-- 職長等教育 -->
+        <section id="foreman">
+            <div class="section-header">
+                <div class="section-icon">👷</div>
+                <h2>職長等教育</h2>
+            </div>
+
+            <h3>職長・安全衛生責任者教育（建設業向け）</h3>
+            <p>建設現場などで労働者を指揮する職長は、労働者の健康と安全を確保する重要な立場にあります。建設業では、安全衛生責任者について職長が兼ねることが多いため、厚生労働省では統合した教育の実施を推進しています。</p>
+
+            <h4>法令根拠一覧</h4>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>根拠種別</th>
+                            <th>条文番号</th>
+                            <th>内容</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="badge badge-info">法律</span></td>
+                            <td><strong>労働安全衛生法第60条</strong></td>
+                            <td>職長その他作業中の労働者を直接指導又は監督する者に対する教育義務</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-info">法律</span></td>
+                            <td><strong>労働安全衛生法第16条</strong></td>
+                            <td>安全衛生責任者の選任義務（統括安全衛生責任者を選任すべき事業者以外の請負人）</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-info">法律</span></td>
+                            <td><strong>労働安全衛生法第15条</strong></td>
+                            <td>統括安全衛生責任者の選任義務</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-info">政令</span></td>
+                            <td><strong>施行令第19条</strong></td>
+                            <td>職長教育の対象業種（建設業、製造業等）</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-info">省令</span></td>
+                            <td><strong>安衛則第40条</strong></td>
+                            <td>職長教育のカリキュラム及び時間</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-info">省令</span></td>
+                            <td><strong>安衛則第18条の4</strong></td>
+                            <td>安全衛生責任者の職務</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-info">通達</span></td>
+                            <td><strong>令和3年1月25日付通達</strong></td>
+                            <td>オンライン教育の実施要件</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-header">
+                    <span>労働安全衛生法第60条（条文全文）</span>
+                    <div class="accordion-icon">+</div>
+                </div>
+                <div class="accordion-body">
+                    <div class="accordion-content">
+                        <div class="code-title">労働安全衛生法 第60条（職長等の教育）</div>
+                        <div class="code-block">第六十条　事業者は、その事業場の業種が政令で定めるものに該当するときは、
+新たに職務につくこととなった職長その他の作業中の労働者を直接指導又は
+監督する者（作業主任者を除く。）に対し、次の事項について、厚生労働省令で
+定めるところにより、安全又は衛生のための教育を行なわなければならない。
+
+一　作業方法の決定及び労働者の配置に関すること。
+二　労働者に対する指導又は監督の方法に関すること。
+三　前二号に掲げるもののほか、労働災害を防止するため必要な事項で、
+　　厚生労働省令で定めるもの</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-header">
+                    <span>労働安全衛生規則第40条（カリキュラム規定）</span>
+                    <div class="accordion-icon">+</div>
+                </div>
+                <div class="accordion-body">
+                    <div class="accordion-content">
+                        <div class="code-title">労働安全衛生規則 第40条（職長等の教育）</div>
+                        <div class="code-block">第四十条　法第六十条の規定による教育は、次の表の上欄に掲げる事項に
+ついて、同表の下欄に掲げる時間以上行わなければならない。
+
+┌────────────────────────────────────────────┬──────┐
+│               事項                               │  時間  │
+├────────────────────────────────────────────┼──────┤
+│作業方法の決定及び労働者の配置に関すること          │  2時間 │
+├────────────────────────────────────────────┼──────┤
+│労働者に対する指導又は監督の方法に関すること        │ 2.5時間│
+├────────────────────────────────────────────┼──────┤
+│危険性又は有害性等の調査及びその結果に基づき        │  4時間 │
+│講ずる措置に関すること                            │        │
+├────────────────────────────────────────────┼──────┤
+│異常時等における措置に関すること                    │ 1.5時間│
+├────────────────────────────────────────────┼──────┤
+│その他現場監督者として行うべき労働災害防止活動に    │  2時間 │
+│関すること                                        │        │
+└────────────────────────────────────────────┴──────┘
+
+２　事業者は、前項の表の上欄に掲げる事項の全部又は一部について
+十分な知識及び技能を有していると認められる者については、当該事項
+に関する教育を省略することができる。</div>
+                    </div>
+                </div>
+            </div>
+
+            <h4>カリキュラム詳細（建設業向け）</h4>
+            <div class="curriculum-list">
+                <div class="curriculum-item">
+                    <span>作業方法の決定及び労働者の配置に関する講習<br><small style="color: var(--text-muted);">作業手順の定め方、労働者の適正な配置の方法</small></span>
+                    <div class="curriculum-time">2時間</div>
+                </div>
+                <div class="curriculum-item">
+                    <span>労働者に対する指導又は監督の方法に関する講習<br><small style="color: var(--text-muted);">指導及び教育の方法、作業中における監督及び指示の方法</small></span>
+                    <div class="curriculum-time">2.5時間</div>
+                </div>
+                <div class="curriculum-item">
+                    <span>危険性又は有害性等の調査（リスクアセスメント）<br><small style="color: var(--text-muted);">リスクアセスメントの実施方法、危険性・有害性の特定、リスク低減措置</small></span>
+                    <div class="curriculum-time">4時間</div>
+                </div>
+                <div class="curriculum-item">
+                    <span>異常時における措置に関する講習<br><small style="color: var(--text-muted);">異常時における措置、災害発生時における措置</small></span>
+                    <div class="curriculum-time">1.5時間</div>
+                </div>
+                <div class="curriculum-item">
+                    <span>その他現場監督者として行うべき労働災害防止活動<br><small style="color: var(--text-muted);">設備及び作業場所の保守管理、労働者の創意工夫を引き出す方法</small></span>
+                    <div class="curriculum-time">2時間</div>
+                </div>
+                <div class="curriculum-item">
+                    <span>安全衛生責任者の職務に関する講習<br><small style="color: var(--text-muted);">安全衛生責任者の役割と職務、統括安全衛生責任者との連絡調整</small></span>
+                    <div class="curriculum-time">1時間</div>
+                </div>
+                <div class="curriculum-item">
+                    <span>統括安全衛生管理の進め方に関する講習<br><small style="color: var(--text-muted);">統括安全衛生管理の仕組み、混在作業における調整方法</small></span>
+                    <div class="curriculum-time">1時間</div>
+                </div>
+                <div class="curriculum-item">
+                    <span>グループ討議（ZOOM講義）<br><small style="color: var(--text-muted);">受講者間の意見交換、疑問解消</small></span>
+                    <div class="curriculum-time">0.5時間</div>
+                </div>
+            </div>
+            <div class="total-time">📊 合計: 14.5時間（2日間）</div>
+
+            <div class="alert alert-info">
+                <div class="alert-icon">ℹ️</div>
+                <div>
+                    <strong>安全衛生責任者とは（安衛法第16条）</strong><br>
+                    元方事業者（元請）の労働者と関係請負人（下請）の労働者が同一の場所で作業をする<strong>50人以上の混在作業現場</strong>において、関係請負人側で選任が義務付けられている責任者です。統括安全衛生責任者との連絡調整、下請負人の労働者への連絡、作業間の調整などを行います。
+                </div>
+            </div>
+
+            <h3>能力向上教育（職長・安全衛生責任者の再教育）</h3>
+            <p>職長・安全衛生責任者教育修了後、<strong>概ね5年経過した方</strong>を対象とする再教育です。</p>
+
+            <h4>法令根拠</h4>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr><th>根拠種別</th><th>条文番号</th><th>内容</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="badge badge-info">法律</span></td>
+                            <td><strong>労働安全衛生法第19条の2</strong></td>
+                            <td>能力向上教育の努力義務</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-info">通達</span></td>
+                            <td><strong>平成29年2月20日付基発0220第3号</strong></td>
+                            <td>建設業における職長等及び安全衛生責任者の能力向上教育に準じた教育について</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-info">指針</span></td>
+                            <td><strong>能力向上教育指針（平成元年5月22日公示第1号）</strong></td>
+                            <td>能力向上教育の実施要領</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-header">
+                    <span>労働安全衛生法第19条の2（条文全文）</span>
+                    <div class="accordion-icon">+</div>
+                </div>
+                <div class="accordion-body">
+                    <div class="accordion-content">
+                        <div class="code-title">労働安全衛生法 第19条の2（能力向上教育）</div>
+                        <div class="code-block">第十九条の二　事業者は、事業場における安全衛生の水準の向上を図る
+ため、安全管理者、衛生管理者、安全衛生推進者、衛生推進者その他
+労働災害の防止のための業務に従事する者に対し、これらの者が従事
+する業務に関する能力の向上を図るための教育、講習等を行い、又は
+これらを受ける機会を与えるように努めなければならない。</div>
+                    </div>
+                </div>
+            </div>
+
+            <h4>カリキュラム詳細（基発0220第3号）</h4>
+            <div class="curriculum-list">
+                <div class="curriculum-item">
+                    <span>職長等及び安全衛生責任者として行うべき労働災害防止に関すること<br><small style="color: var(--text-muted);">最近の建設業における労働災害の動向、労働災害防止対策の重点事項</small></span>
+                    <div class="curriculum-time">2時間</div>
+                </div>
+                <div class="curriculum-item">
+                    <span>労働者に対する指導又は監督の方法に関すること<br><small style="color: var(--text-muted);">効果的な指導方法、危険予知活動の進め方</small></span>
+                    <div class="curriculum-time">1時間</div>
+                </div>
+                <div class="curriculum-item">
+                    <span>危険性又は有害性等の調査等に関すること<br><small style="color: var(--text-muted);">リスクアセスメントの最新動向、実施事例</small></span>
+                    <div class="curriculum-time">30分</div>
+                </div>
+                <div class="curriculum-item">
+                    <span>グループ演習<br><small style="color: var(--text-muted);">事例研究、危険予知訓練、リスクアセスメント演習等</small></span>
+                    <div class="curriculum-time">2時間10分</div>
+                </div>
+            </div>
+            <div class="total-time">📊 合計: 5時間40分</div>
+
+            <div class="alert alert-warning">
+                <div class="alert-icon">⚠️</div>
+                <div>
+                    <strong>法的性質について</strong><br>
+                    能力向上教育は<span class="badge badge-effort">努力義務</span>であり、直接の罰則はありませんが、<strong>安全配慮義務の履行</strong>として重要視され、労働災害発生時の事業者責任の判断材料となりえます。また、元請からの要請により実施が求められることも多くあります。
+                </div>
+            </div>
+
+            <h3>製造業向け 職長教育一般</h3>
+
+            <h4>対象業種（労働安全衛生法施行令第19条）</h4>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr><th>業種</th><th>追加時期</th><th>備考</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>建設業</td><td>当初（昭和47年）から</td><td>-</td></tr>
+                        <tr><td>製造業</td><td>当初（昭和47年）から</td><td>一部業種を除く</td></tr>
+                        <tr><td>電気業・ガス業</td><td>当初（昭和47年）から</td><td>-</td></tr>
+                        <tr><td>自動車整備業・機械修理業</td><td>当初（昭和47年）から</td><td>-</td></tr>
+                        <tr><td>食料品製造業</td><td><span class="badge badge-new">2023年4月追加</span></td><td>日本標準産業分類 中分類09（令和4年政令第297号）</td></tr>
+                        <tr><td>新聞業</td><td><span class="badge badge-new">2023年4月追加</span></td><td>中分類41の一部（印刷部門）</td></tr>
+                        <tr><td>製本業、印刷物加工業</td><td><span class="badge badge-new">2023年4月追加</span></td><td>小分類153</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="total-time">📊 合計: 12時間30分</div>
+        </section>
+
+        <!-- 特別教育一覧 -->
+        <section id="special">
+            <div class="section-header">
+                <div class="section-icon">🔧</div>
+                <h2>特別教育一覧</h2>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-header">
+                    <span>労働安全衛生法第59条第3項（特別教育の根拠条文）</span>
+                    <div class="accordion-icon">+</div>
+                </div>
+                <div class="accordion-body">
+                    <div class="accordion-content">
+                        <div class="code-title">労働安全衛生法 第59条第3項</div>
+                        <div class="code-block">３　事業者は、危険又は有害な業務で、厚生労働省令で定めるものに
+労働者をつかせるときは、厚生労働省令で定めるところにより、
+当該業務に関する安全又は衛生のための特別の教育を行なわなければ
+ならない。</div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>建設機械系特別教育</h3>
+            <div class="cards-grid">
+                <div class="edu-card">
+                    <div class="edu-card-header">
+                        <h4>小型車両系建設機械（整地・運搬・掘削用）</h4>
+                    </div>
+                    <div class="edu-card-body">
+                        <p>機体重量3トン未満のブルドーザー、パワーショベル、ドラグショベル等の運転業務</p>
+                        <div class="edu-card-meta">
+                            <span class="badge badge-required">義務</span>
+                            <span class="time-badge">13時間</span>
+                        </div>
+                        <div class="law-ref">
+                            <strong>根拠:</strong> 安衛則第36条第9号 / 特別教育規程第11条<br>
+                            <strong>対象機械:</strong> ブルドーザー、モーターグレーダー、トラクターショベル、パワーショベル、ドラグショベル等
+                        </div>
+                    </div>
+                </div>
+
+                <div class="edu-card">
+                    <div class="edu-card-header">
+                        <h4>小型車両系建設機械（解体用）</h4>
+                    </div>
+                    <div class="edu-card-body">
+                        <p>機体重量3トン未満のブレーカ、鉄骨切断機、コンクリート圧砕機等の運転業務</p>
+                        <div class="edu-card-meta">
+                            <span class="badge badge-required">義務</span>
+                            <span class="time-badge">9時間</span>
+                        </div>
+                        <div class="law-ref">
+                            <strong>根拠:</strong> 安衛則第36条第9号の2 / 特別教育規程第11条の2<br>
+                            <strong>対象機械:</strong> ブレーカ、鉄骨切断機、コンクリート圧砕機、解体用つかみ機
+                        </div>
+                    </div>
+                </div>
+
+                <div class="edu-card">
+                    <div class="edu-card-header">
+                        <h4>小型車両系建設機械（基礎工事用）</h4>
+                    </div>
+                    <div class="edu-card-body">
+                        <p>機体重量3トン未満のくい打機、アースオーガー等の運転業務</p>
+                        <div class="edu-card-meta">
+                            <span class="badge badge-required">義務</span>
+                            <span class="time-badge">13時間</span>
+                        </div>
+                        <div class="law-ref">
+                            <strong>根拠:</strong> 安衛則第36条第9号の3 / 特別教育規程第11条の3<br>
+                            <strong>対象機械:</strong> くい打機、くい抜機、アースドリル、アースオーガー等
+                        </div>
+                    </div>
+                </div>
+
+                <div class="edu-card">
+                    <div class="edu-card-header">
+                        <h4>ローラー運転</h4>
+                    </div>
+                    <div class="edu-card-body">
+                        <p>動力を用い、不特定の場所に自走できるローラーの運転業務</p>
+                        <div class="edu-card-meta">
+                            <span class="badge badge-required">義務</span>
+                            <span class="time-badge">8時間</span>
+                        </div>
+                        <div class="law-ref">
+                            <strong>根拠:</strong> 安衛則第36条第10号 / 特別教育規程第12条
+                        </div>
+                    </div>
+                </div>
+
+                <div class="edu-card">
+                    <div class="edu-card-header">
+                        <h4>高所作業車の運転（10m未満）</h4>
+                    </div>
+                    <div class="edu-card-body">
+                        <p>作業床の高さが10メートル未満の高所作業車の運転業務</p>
+                        <div class="edu-card-meta">
+                            <span class="badge badge-required">義務</span>
+                            <span class="time-badge">9時間</span>
+                        </div>
+                        <div class="law-ref">
+                            <strong>根拠:</strong> 安衛則第36条第10号の5 / 特別教育規程第13条
+                        </div>
+                    </div>
+                </div>
+
+                <div class="edu-card">
+                    <div class="edu-card-header">
+                        <h4>不整地運搬車の運転（1トン未満）</h4>
+                    </div>
+                    <div class="edu-card-body">
+                        <p>最大積載量1トン未満の不整地運搬車の運転業務</p>
+                        <div class="edu-card-meta">
+                            <span class="badge badge-required">義務</span>
+                            <span class="time-badge">12時間</span>
+                        </div>
+                        <div class="law-ref">
+                            <strong>根拠:</strong> 安衛則第36条第5号の3 / 特別教育規程第7条の3
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>クレーン・荷役系特別教育</h3>
+            <div class="cards-grid">
+                <div class="edu-card">
+                    <div class="edu-card-header">
+                        <h4>クレーン取扱い業務（5トン未満）</h4>
+                    </div>
+                    <div class="edu-card-body">
+                        <p>つり上げ荷重5トン未満のクレーンの運転業務（無線操作含む）</p>
+                        <div class="edu-card-meta">
+                            <span class="badge badge-required">義務</span>
+                            <span class="time-badge">13時間</span>
+                        </div>
+                        <div class="law-ref">
+                            <strong>根拠:</strong> クレーン等安全規則第21条 / 特別教育規程第14条
+                        </div>
+                    </div>
+                </div>
+
+                <div class="edu-card">
+                    <div class="edu-card-header">
+                        <h4>移動式クレーンの運転（1トン未満）</h4>
+                    </div>
+                    <div class="edu-card-body">
+                        <p>つり上げ荷重1トン未満の移動式クレーンの運転業務</p>
+                        <div class="edu-card-meta">
+                            <span class="badge badge-required">義務</span>
+                            <span class="time-badge">13時間</span>
+                        </div>
+                        <div class="law-ref">
+                            <strong>根拠:</strong> クレーン等安全規則第67条 / 特別教育規程第15条
+                        </div>
+                    </div>
+                </div>
+
+                <div class="edu-card">
+                    <div class="edu-card-header">
+                        <h4>玉掛けの業務（1トン未満）</h4>
+                    </div>
+                    <div class="edu-card-body">
+                        <p>つり上げ荷重1トン未満のクレーン等の玉掛け業務</p>
+                        <div class="edu-card-meta">
+                            <span class="badge badge-required">義務</span>
+                            <span class="time-badge">9時間</span>
+                        </div>
+                        <div class="law-ref">
+                            <strong>根拠:</strong> クレーン等安全規則第222条 / 特別教育規程第17条
+                        </div>
+                    </div>
+                </div>
+
+                <div class="edu-card">
+                    <div class="edu-card-header">
+                        <h4>巻上げ機の運転</h4>
+                    </div>
+                    <div class="edu-card-body">
+                        <p>動力により駆動される巻上げ機の運転業務</p>
+                        <div class="edu-card-meta">
+                            <span class="badge badge-required">義務</span>
+                            <span class="time-badge">10時間</span>
+                        </div>
+                        <div class="law-ref">
+                            <strong>根拠:</strong> 安衛則第36条第10号の3 / 特別教育規程第12条の2
+                        </div>
+                    </div>
+                </div>
+
+                <div class="edu-card">
+                    <div class="edu-card-header" style="background: linear-gradient(135deg, #059669 0%, #10b981 100%);">
+                        <h4>テールゲートリフター操作 <span class="badge badge-new" style="background: white; color: #059669;">2024年施行</span></h4>
+                    </div>
+                    <div class="edu-card-body">
+                        <p>最大積載量2トン以上の貨物自動車のテールゲートリフター操作業務</p>
+                        <div class="edu-card-meta">
+                            <span class="badge badge-required">義務</span>
+                            <span class="time-badge">4時間</span>
+                        </div>
+                        <div class="law-ref">
+                            <strong>根拠:</strong> 安衛則第36条第5号の4（2024年2月1日施行）/ 特別教育規程第7条の4<br>
+                            <strong>経過措置:</strong> 施行日前から従事していた者は2024年7月31日までに修了
+                        </div>
+                    </div>
+                </div>
+
+                <div class="edu-card">
+                    <div class="edu-card-header">
+                        <h4>ショベルローダー等運転（1トン未満）</h4>
+                    </div>
+                    <div class="edu-card-body">
+                        <p>最大荷重1トン未満のショベルローダー又はフォークローダーの運転業務</p>
+                        <div class="edu-card-meta">
+                            <span class="badge badge-required">義務</span>
+                            <span class="time-badge">12時間</span>
+                        </div>
+                        <div class="law-ref">
+                            <strong>根拠:</strong> 安衛則第36条第5号の2 / 特別教育規程第7条の2
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>高所・墜落防止系特別教育</h3>
+            <div class="cards-grid">
+                <div class="edu-card">
+                    <div class="edu-card-header">
+                        <h4>フルハーネス型墜落制止用器具</h4>
+                    </div>
+                    <div class="edu-card-body">
+                        <p>高さ2m以上で作業床を設けることが困難な場所でのフルハーネス使用業務</p>
+                        <div class="edu-card-meta">
+                            <span class="badge badge-required">義務</span>
+                            <span class="time-badge">6時間</span>
+                        </div>
+                        <div class="law-ref">
+                            <strong>根拠:</strong> 安衛則第36条第41号（2019年2月1日施行）/ 特別教育規程第24条<br>
+                            <strong>背景:</strong> 高さ6.75m超（建設業5m超）でフルハーネス型使用が原則義務化
+                        </div>
+                    </div>
+                </div>
+
+                <div class="edu-card">
+                    <div class="edu-card-header">
+                        <h4>足場の組立て等</h4>
+                    </div>
+                    <div class="edu-card-body">
+                        <p>足場の組立て、解体又は変更の作業に係る業務（地上補助作業を除く）</p>
+                        <div class="edu-card-meta">
+                            <span class="badge badge-required">義務</span>
+                            <span class="time-badge">6時間</span>
+                        </div>
+                        <div class="law-ref">
+                            <strong>根拠:</strong> 安衛則第36条第39号（2015年7月1日施行）/ 特別教育規程第22条
+                        </div>
+                    </div>
+                </div>
+
+                <div class="edu-card">
+                    <div class="edu-card-header">
+                        <h4>ロープ高所作業（ブランコ作業）</h4>
+                    </div>
+                    <div class="edu-card-body">
+                        <p>昇降器具を用いて身体を保持しつつ行う高所作業（2m以上）</p>
+                        <div class="edu-card-meta">
+                            <span class="badge badge-required">義務</span>
+                            <span class="time-badge">7時間</span>
+                        </div>
+                        <div class="law-ref">
+                            <strong>根拠:</strong> 安衛則第36条第40号（2016年7月1日施行）/ 特別教育規程第23条<br>
+                            <strong>関連規定:</strong> 安衛則第539条の2〜第539条の9（ロープ高所作業の安全基準）
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>危険有害業務系特別教育</h3>
+            <div class="cards-grid">
+                <div class="edu-card">
+                    <div class="edu-card-header">
+                        <h4>酸素欠乏・硫化水素危険作業</h4>
+                    </div>
+                    <div class="edu-card-body">
+                        <p>酸素欠乏危険場所又は硫化水素発生場所での作業（第2種酸素欠乏危険作業）</p>
+                        <div class="edu-card-meta">
+                            <span class="badge badge-required">義務</span>
+                            <span class="time-badge">5.5時間</span>
+                        </div>
+                        <div class="law-ref">
+                            <strong>根拠:</strong> 安衛則第36条第26号 / 酸素欠乏症等防止規則第12条 / 特別教育規程第19条
+                        </div>
+                    </div>
+                </div>
+
+                <div class="edu-card">
+                    <div class="edu-card-header">
+                        <h4>石綿使用建築物等解体等</h4>
+                    </div>
+                    <div class="edu-card-body">
+                        <p>石綿等が使用されている建築物、工作物又は船舶の解体等の作業</p>
+                        <div class="edu-card-meta">
+                            <span class="badge badge-required">義務</span>
+                            <span class="time-badge">4.5時間</span>
+                        </div>
+                        <div class="law-ref">
+                            <strong>根拠:</strong> 安衛則第36条第37号 / 石綿障害予防規則第27条 / 特別教育規程第21条
+                        </div>
+                    </div>
+                </div>
+
+                <div class="edu-card">
+                    <div class="edu-card-header">
+                        <h4>粉じん作業</h4>
+                    </div>
+                    <div class="edu-card-body">
+                        <p>常時特定粉じん作業に係る業務</p>
+                        <div class="edu-card-meta">
+                            <span class="badge badge-required">義務</span>
+                            <span class="time-badge">4.5時間</span>
+                        </div>
+                        <div class="law-ref">
+                            <strong>根拠:</strong> 粉じん障害防止規則第22条 / 特別教育規程第20条
+                        </div>
+                    </div>
+                </div>
+
+                <div class="edu-card">
+                    <div class="edu-card-header">
+                        <h4>アーク溶接等作業</h4>
+                    </div>
+                    <div class="edu-card-body">
+                        <p>アーク溶接機を用いて行う金属の溶接、溶断等の業務</p>
+                        <div class="edu-card-meta">
+                            <span class="badge badge-required">義務</span>
+                            <span class="time-badge">21時間</span>
+                        </div>
+                        <div class="law-ref">
+                            <strong>根拠:</strong> 安衛則第36条第3号 / 特別教育規程第4条<br>
+                            <strong>内訳:</strong> 学科11h + 実技10h
+                        </div>
+                    </div>
+                </div>
+
+                <div class="edu-card">
+                    <div class="edu-card-header">
+                        <h4>低圧電気取扱</h4>
+                    </div>
+                    <div class="edu-card-body">
+                        <p>低圧（交流600V以下、直流750V以下）の充電電路の敷設・修理又は開閉器操作の業務</p>
+                        <div class="edu-card-meta">
+                            <span class="badge badge-required">義務</span>
+                            <span class="time-badge">14時間</span>
+                        </div>
+                        <div class="law-ref">
+                            <strong>根拠:</strong> 安衛則第36条第4号 / 特別教育規程第6条<br>
+                            <strong>開閉器操作のみ:</strong> 2時間（学科1h + 実技1h）
+                        </div>
+                    </div>
+                </div>
+
+                <div class="edu-card">
+                    <div class="edu-card-header">
+                        <h4>研削といしの取替え・試運転</h4>
+                    </div>
+                    <div class="edu-card-body">
+                        <p>研削といしの取替え又は取替え時の試運転の業務</p>
+                        <div class="edu-card-meta">
+                            <span class="badge badge-required">義務</span>
+                            <span class="time-badge">6時間</span>
+                        </div>
+                        <div class="law-ref">
+                            <strong>根拠:</strong> 安衛則第36条第1号 / 特別教育規程第1条・第2条
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>その他安全衛生教育</h3>
+            <div class="cards-grid">
+                <div class="edu-card">
+                    <div class="edu-card-header" style="background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);">
+                        <h4>熱中症予防教育 <span class="badge badge-new" style="background: white; color: #dc2626;">2025年義務化</span></h4>
+                    </div>
+                    <div class="edu-card-body">
+                        <p>暑さ指数（WBGT）28度以上の環境での作業における熱中症予防対策</p>
+                        <div class="edu-card-meta">
+                            <span class="badge badge-required">義務（2025年6月〜）</span>
+                            <span class="time-badge">3.5時間</span>
+                        </div>
+                        <div class="law-ref">
+                            <strong>根拠:</strong> 安衛法第69条 / 基発0531第2号（令和3年5月31日）/ 令和6年厚生労働省令第89号<br>
+                            <strong>2025年6月施行:</strong> WBGT値の測定・評価義務化、効果的な予防措置の実施義務
+                        </div>
+                    </div>
+                </div>
+
+                <div class="edu-card">
+                    <div class="edu-card-header">
+                        <h4>刈払機取扱作業者安全衛生教育</h4>
+                    </div>
+                    <div class="edu-card-body">
+                        <p>刈払機の取扱作業に係る安全衛生教育</p>
+                        <div class="edu-card-meta">
+                            <span class="badge badge-effort">努力義務</span>
+                            <span class="time-badge">6時間</span>
+                        </div>
+                        <div class="law-ref">
+                            <strong>根拠:</strong> 安衛法第59条第1項 / 基発第66号（昭和50年2月10日）
+                        </div>
+                    </div>
+                </div>
+
+                <div class="edu-card">
+                    <div class="edu-card-header">
+                        <h4>振動工具取扱作業者安全衛生教育</h4>
+                    </div>
+                    <div class="edu-card-body">
+                        <p>振動工具取扱作業者に対する安全衛生教育</p>
+                        <div class="edu-card-meta">
+                            <span class="badge badge-effort">努力義務</span>
+                            <span class="time-badge">4時間</span>
+                        </div>
+                        <div class="law-ref">
+                            <strong>根拠:</strong> 安衛法第59条第1項 / 基発第337号（昭和58年5月20日）
+                        </div>
+                    </div>
+                </div>
+
+                <div class="edu-card">
+                    <div class="edu-card-header">
+                        <h4>丸のこ等取扱い作業者安全衛生教育</h4>
+                    </div>
+                    <div class="edu-card-body">
+                        <p>携帯用丸のこ盤の安全な取扱いに関する教育</p>
+                        <div class="edu-card-meta">
+                            <span class="badge badge-effort">努力義務</span>
+                            <span class="time-badge">4時間</span>
+                        </div>
+                        <div class="law-ref">
+                            <strong>根拠:</strong> 安衛法第59条第1項 / 基発第45号（昭和47年1月17日）
+                        </div>
+                    </div>
+                </div>
+
+                <div class="edu-card">
+                    <div class="edu-card-header">
+                        <h4>有機溶剤取扱業務従事者労働衛生教育</h4>
+                    </div>
+                    <div class="edu-card-body">
+                        <p>有機溶剤業務従事者に対する労働衛生教育</p>
+                        <div class="edu-card-meta">
+                            <span class="badge badge-effort">努力義務</span>
+                            <span class="time-badge">4.5時間</span>
+                        </div>
+                        <div class="law-ref">
+                            <strong>根拠:</strong> 有機溶剤中毒予防規則第37条 / 基発第337号（昭和59年6月29日）
+                        </div>
+                    </div>
+                </div>
+
+                <div class="edu-card">
+                    <div class="edu-card-header">
+                        <h4>除染等業務特別教育</h4>
+                    </div>
+                    <div class="edu-card-body">
+                        <p>放射性物質により汚染された土壌等の除染業務</p>
+                        <div class="edu-card-meta">
+                            <span class="badge badge-required">義務</span>
+                            <span class="time-badge">7時間</span>
+                        </div>
+                        <div class="law-ref">
+                            <strong>根拠:</strong> 除染電離則第19条 / 特別教育規程第21条の2
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- オンライン教育 -->
+        <section id="online">
+            <div class="section-header">
+                <div class="section-icon">💻</div>
+                <h2>オンライン教育の法的要件</h2>
+            </div>
+
+            <h3>eラーニングによる特別教育の実施について</h3>
+
+            <div class="alert alert-info">
+                <div class="alert-icon">📋</div>
+                <div>
+                    <strong>根拠通達</strong><br>
+                    基発0326第1号（令和2年3月26日）「インターネット等を介したeラーニング等により行われる労働安全衛生法に基づく安全衛生教育等の実施について」
+                </div>
+            </div>
+
+            <h4>実施要件</h4>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr><th>要件</th><th>内容</th><th>確認方法</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>教材</strong></td>
+                            <td>各科目の教育内容を網羅した動画・資料</td>
+                            <td>教育内容の事前確認</td>
+                        </tr>
+                        <tr>
+                            <td><strong>受講管理</strong></td>
+                            <td>受講者の視聴状況を確認できるシステム</td>
+                            <td>ログ管理機能</td>
+                        </tr>
+                        <tr>
+                            <td><strong>質問対応</strong></td>
+                            <td>受講者からの質問に適切に回答できる体制</td>
+                            <td>講師への質問機能</td>
+                        </tr>
+                        <tr>
+                            <td><strong>本人確認</strong></td>
+                            <td>受講者の本人確認を行う方法の確保</td>
+                            <td>顔認証、受講前確認等</td>
+                        </tr>
+                        <tr>
+                            <td><strong>実技教育</strong></td>
+                            <td>原則として対面で実施（一部例外あり）</td>
+                            <td>対面実施または要件を満たす場合のみオンライン</td>
+                        </tr>
+                        <tr>
+                            <td><strong>修了確認</strong></td>
+                            <td>理解度テスト等による修了確認</td>
+                            <td>テスト合格基準</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>ZOOM等による双方向教育（令和3年1月25日付通達）</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr><th>要件</th><th>内容</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>双方向性</strong></td>
+                            <td>講師と受講者、受講者間の相互やりとりが可能であること</td>
+                        </tr>
+                        <tr>
+                            <td><strong>リアルタイム</strong></td>
+                            <td>同一時間に参加していること</td>
+                        </tr>
+                        <tr>
+                            <td><strong>記録</strong></td>
+                            <td>受講状況の記録・保存</td>
+                        </tr>
+                        <tr>
+                            <td><strong>本人確認</strong></td>
+                            <td>カメラオンによる本人確認</td>
+                        </tr>
+                        <tr>
+                            <td><strong>参加確認</strong></td>
+                            <td>受講中の離席・不参加の確認</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 記録保存 -->
+        <section id="records">
+            <div class="section-header">
+                <div class="section-icon">📁</div>
+                <h2>記録保存の法的要件</h2>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-header">
+                    <span>労働安全衛生規則第38条（条文全文）</span>
+                    <div class="accordion-icon">+</div>
+                </div>
+                <div class="accordion-body">
+                    <div class="accordion-content">
+                        <div class="code-title">労働安全衛生規則 第38条（特別教育の記録の保存）</div>
+                        <div class="code-block">第三十八条　事業者は、特別教育を行つたときは、当該特別教育の
+受講者、科目等の記録を作成して、これを三年間保存しておかなければ
+ならない。</div>
+                    </div>
+                </div>
+            </div>
+
+            <h4>記録すべき事項</h4>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr><th>項目</th><th>内容</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>受講者氏名</strong></td><td>特別教育を受けた労働者の氏名</td></tr>
+                        <tr><td><strong>教育の科目</strong></td><td>実施した教育の科目名</td></tr>
+                        <tr><td><strong>教育の時間</strong></td><td>各科目の教育時間</td></tr>
+                        <tr><td><strong>教育の年月日</strong></td><td>教育を実施した年月日</td></tr>
+                        <tr><td><strong>講師の氏名・資格</strong></td><td>教育を実施した講師の氏名・資格等</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="alert alert-warning">
+                <div class="alert-icon">⚠️</div>
+                <div>
+                    <strong>保存期間: 3年間</strong><br>
+                    ただし、じん肺健康診断等の記録など、より長い保存期間が定められているものもあります。記録を保存しなかった場合は<strong>50万円以下の罰金</strong>となります。
+                </div>
+            </div>
+        </section>
+
+        <!-- 罰則規定 -->
+        <section id="penalty">
+            <div class="section-header">
+                <div class="section-icon">⚖️</div>
+                <h2>罰則規定</h2>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-header">
+                    <span>労働安全衛生法第119条（条文全文）</span>
+                    <div class="accordion-icon">+</div>
+                </div>
+                <div class="accordion-body">
+                    <div class="accordion-content">
+                        <div class="code-title">労働安全衛生法 第119条</div>
+                        <div class="code-block">第百十九条　次の各号のいずれかに該当する者は、六月以下の懲役又は
+五十万円以下の罰金に処する。
+
+一　第十四条、第二十条から第二十五条まで、第二十五条の二第一項、
+　　第三十条の三第一項若しくは第四項、第三十一条第一項、第三十一条の二、
+　　第三十三条第一項若しくは第二項、第三十四条、第三十五条、第三十八条
+　　第一項、第四十条第一項、第四十二条、第四十三条、第四十四条第六項、
+　　第四十四条の二第七項、第五十六条第三項若しくは第四項、第五十七条の
+　　三第一項若しくは第二項、第五十七条の四第一項、第五十七条の五第一項、
+　　第五十九条第三項、第六十一条第一項、第六十五条第一項、第六十五条の
+　　四、第六十八条、第八十九条第五項（第八十九条の二第二項において準用
+　　する場合を含む。）、第九十七条第二項、第百四条又は第百八条の二第四項
+　　の規定に違反した者</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="penalty-box">
+                <h4>⚠️ 特別教育に関する違反と罰則</h4>
+                <div class="penalty-item">
+                    <span>特別教育を実施せずに危険・有害業務に労働者を従事させた場合</span>
+                    <span class="penalty-amount">6月以下の懲役又は50万円以下の罰金</span>
+                </div>
+                <div class="penalty-item">
+                    <span>職長教育を実施せずに職長等を従事させた場合</span>
+                    <span class="penalty-amount">6月以下の懲役又は50万円以下の罰金</span>
+                </div>
+                <div class="penalty-item">
+                    <span>特別教育の記録を保存しなかった場合</span>
+                    <span class="penalty-amount">50万円以下の罰金</span>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-header">
+                    <span>両罰規定（労働安全衛生法第122条）</span>
+                    <div class="accordion-icon">+</div>
+                </div>
+                <div class="accordion-body">
+                    <div class="accordion-content">
+                        <div class="code-title">労働安全衛生法 第122条（両罰規定）</div>
+                        <div class="code-block">第百二十二条　法人の代表者又は法人若しくは人の代理人、使用人その他の
+従業者が、その法人又は人の業務に関して、第百十六条、第百十七条、
+第百十九条又は第百二十条の違反行為をしたときは、行為者を罰するほか、
+その法人又は人に対しても、各本条の罰金刑を科する。</div>
+                        <p style="margin-top: 1rem;">つまり、<strong>行為者（担当者）だけでなく、法人（会社）に対しても罰金刑が科される</strong>ことになります。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 関係法令条文 -->
+        <section id="laws">
+            <div class="section-header">
+                <div class="section-icon">📜</div>
+                <h2>関係法令条文</h2>
+            </div>
+
+            <h3>労働安全衛生法（抜粋）</h3>
+
+            <div class="accordion">
+                <div class="accordion-header">
+                    <span>第59条（安全衛生教育）</span>
+                    <div class="accordion-icon">+</div>
+                </div>
+                <div class="accordion-body">
+                    <div class="accordion-content">
+                        <div class="code-block">（安全衛生教育）
+第五十九条　事業者は、労働者を雇い入れたときは、当該労働者に対し、
+厚生労働省令で定めるところにより、その従事する業務に関する安全
+又は衛生のための教育を行なわなければならない。
+
+２　前項の規定は、労働者の作業内容を変更したときについて準用する。
+
+３　事業者は、危険又は有害な業務で、厚生労働省令で定めるものに
+労働者をつかせるときは、厚生労働省令で定めるところにより、当該
+業務に関する安全又は衛生のための特別の教育を行なわなければならない。</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-header">
+                    <span>第60条（職長等の教育）</span>
+                    <div class="accordion-icon">+</div>
+                </div>
+                <div class="accordion-body">
+                    <div class="accordion-content">
+                        <div class="code-block">（職長等の教育）
+第六十条　事業者は、その事業場の業種が政令で定めるものに該当する
+ときは、新たに職務につくこととなった職長その他の作業中の労働者を
+直接指導又は監督する者（作業主任者を除く。）に対し、次の事項に
+ついて、厚生労働省令で定めるところにより、安全又は衛生のための
+教育を行なわなければならない。
+
+一　作業方法の決定及び労働者の配置に関すること。
+二　労働者に対する指導又は監督の方法に関すること。
+三　前二号に掲げるもののほか、労働災害を防止するため必要な事項で、
+　　厚生労働省令で定めるもの</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-header">
+                    <span>第19条の2（能力向上教育）</span>
+                    <div class="accordion-icon">+</div>
+                </div>
+                <div class="accordion-body">
+                    <div class="accordion-content">
+                        <div class="code-block">（能力向上教育）
+第十九条の二　事業者は、事業場における安全衛生の水準の向上を図る
+ため、安全管理者、衛生管理者、安全衛生推進者、衛生推進者その他
+労働災害の防止のための業務に従事する者に対し、これらの者が従事
+する業務に関する能力の向上を図るための教育、講習等を行い、又は
+これらを受ける機会を与えるように努めなければならない。</div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>労働安全衛生規則（抜粋）</h3>
+
+            <div class="accordion">
+                <div class="accordion-header">
+                    <span>第36条（特別教育を必要とする業務）- 主要条項</span>
+                    <div class="accordion-icon">+</div>
+                </div>
+                <div class="accordion-body">
+                    <div class="accordion-content">
+                        <div class="code-block">（特別教育を必要とする業務）
+第三十六条　法第五十九条第三項の厚生労働省令で定める危険又は
+有害な業務は、次のとおりとする。
+
+一　研削といしの取替え又は取替え時の試運転の業務
+
+三　アーク溶接機を用いて行う金属の溶接、溶断等（以下「アーク溶接等」
+　　という。）の業務
+
+四　低圧（直流にあつては七百五十ボルト以下、交流にあつては
+　　六百ボルト以下である電圧をいう。以下同じ。）の充電電路の
+　　敷設若しくは修理の業務又は配電盤室、変電室等区画された
+　　場所に設置する低圧の電路のうち充電部分が露出している
+　　開閉器の操作の業務
+
+五の二　最大荷重が一トン未満のショベルローダー又はフォークローダーの
+　　　　運転（道路上を走行させる運転を除く。）の業務
+
+五の三　最大積載量が一トン未満の不整地運搬車の運転（道路上を
+　　　　走行させる運転を除く。）の業務
+
+五の四　荷を積む貨物自動車（最大積載量が二トン以上のものに限る。）に
+　　　　取り付けられたテールゲートリフターを使用して荷役作業を行う業務
+
+九　機体重量が三トン未満の令別表第七第一号に掲げる建設機械で、
+　　動力を用い、かつ、不特定の場所に自走できるものの運転
+　　（道路上を走行させる運転を除く。）の業務
+
+九の二　機体重量が三トン未満の令別表第七第二号に掲げる建設機械
+　　　　（解体用）の運転の業務
+
+九の三　機体重量が三トン未満の令別表第七第三号に掲げる建設機械
+　　　　（基礎工事用）の運転の業務
+
+十　動力を用い、かつ、不特定の場所に自走できるローラーの運転
+　　（道路上を走行させる運転を除く。）の業務
+
+十の三　動力により駆動される巻上げ機の運転の業務
+
+十の五　作業床の高さが十メートル未満の高所作業車の運転
+　　　　（道路上を走行させる運転を除く。）の業務
+
+二十六　酸素欠乏危険場所における作業に係る業務
+
+三十七　石綿等が使用されている建築物等の解体等の作業に係る業務
+
+三十九　足場の組立て、解体又は変更の作業に係る業務
+　　　　（地上又は堅固な床上における補助作業の業務を除く。）
+
+四十　ロープ高所作業に係る業務
+
+四十一　高さが二メートル以上の箇所であつて作業床を設けることが
+　　　　困難なところにおいて、墜落制止用器具のうちフルハーネス型の
+　　　　ものを用いて行う作業に係る業務</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="alert alert-info" style="margin-top: 2rem;">
+                <div class="alert-icon">ℹ️</div>
+                <div>
+                    <strong>免責事項</strong><br>
+                    この資料は情報提供を目的として作成されており、法的助言を構成するものではありません。法令の解釈・適用については、所轄の労働基準監督署または専門家にご確認ください。法令改正により内容が変更される場合がありますので、最新の情報は厚生労働省のWebサイト等でご確認ください。
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p><strong>法定教育要件まとめ</strong></p>
+        <p>KCI教育センター対応講座版</p>
+        <p style="margin-top: 1rem;">最終更新: 2026年1月 | 対応法令: 2025年4月施行分まで</p>
+    </footer>
+
+    <script>
+        // Accordion
+        document.querySelectorAll('.accordion-header').forEach(h => {
+            h.addEventListener('click', () => h.parentElement.classList.toggle('open'));
+        });
+
+        // Active nav
+        const navLinks = document.querySelectorAll('.nav-link');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            document.querySelectorAll('section[id]').forEach(s => {
+                if (scrollY >= s.offsetTop - 100) current = s.id;
+            });
+            navLinks.forEach(l => {
+                l.classList.toggle('active', l.getAttribute('href') === '#' + current);
+            });
+        });
+    </script>
+</body>
+</html>
